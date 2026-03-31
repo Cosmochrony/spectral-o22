@@ -14,14 +14,10 @@ the first central open problem left by **O21**:
 **O21** established that:
 
 - the physically relevant observable is the canonical fibre-level quantity
-  $
-  \sigma_{\mathrm{pair}}^{\mathrm{can}}(n)
-  $
+  $\sigma_{\mathrm{pair}}^{\mathrm{can}}(n)$
 - the admissibility criterion can be reformulated intrinsically through the
   observable rank
-  $
-  n^{\mathrm{obs}}_3
-  $
+  $n^{\mathrm{obs}}_3$
 - the external amplitude parameter and the external threshold can be
   eliminated from the persistence criterion
 
@@ -31,9 +27,7 @@ However:
 - the geometric matching between continuous decay and discrete BFS structure
   was not yet derived
 - the transfer
-  $
-  \delta_{\mathrm{pair}} \to \beta^*
-  $
+  $\delta_{\mathrm{pair}} \to \beta^*$
   therefore still depended on an open structural hypothesis
 
 This defines the scope of **O22**.
@@ -48,9 +42,7 @@ The key mechanism is **projection locking**:
 - the non-injective projection $\Pi$ only realises observable states on
   admissible BFS-shell depths
 - physical saturation can therefore occur only at the intersection
-  $
-  L_{\mathrm{BI}} \cap \mathbb{N}_q
-  $
+  $L_{\mathrm{BI}} \cap \mathbb{N}_q$
 
 Central result:
 
@@ -65,9 +57,7 @@ Thus, the discreteness of the saturation rank is derived, not assumed.
 
 The observable space decomposes as
 
-$
-O = \bigsqcup_{n \in \mathbb{N}_q} O_n
-$
+$O = \bigsqcup_{n \in \mathbb{N}_q} O_n$
 
 where $\mathbb{N}_q$ is the set of projectively admissible shell depths.
 
@@ -79,17 +69,13 @@ depth.
 The fibre-level observable is treated as a discrete sampling of a continuous
 effective decay law
 
-$
-\tilde{\sigma}(t) \sim C\, t^{-\delta_{\mathrm{pair}}}
-$
+$\tilde{\sigma}(t) \sim C\, t^{-\delta_{\mathrm{pair}}}$
 
 inherited from the underlying $\chi$-relaxation dynamics.
 
 The Born–Infeld admissibility constraint
 
-$
-A_n \leq \frac{c_\chi}{\sqrt{\lambda_n}}
-$
+$A_n \leq \frac{c_\chi}{\sqrt{\lambda_n}}$
 
 therefore defines a saturation locus in continuous depth, with no intrinsic
 reason to land on an integer.
@@ -105,15 +91,11 @@ The central theorem shows that:
 
 Hence the physical saturation depth satisfies
 
-$
-n_{\mathrm{sat}} \in \mathbb{N}
-$
+$n_{\mathrm{sat}} \in \mathbb{N}$
 
 because it belongs to
 
-$
-L_{\mathrm{BI}} \cap \mathbb{N}_q
-$
+$L_{\mathrm{BI}} \cap \mathbb{N}_q$
 
 ### 4. Shell-alignment as a derived consequence
 
@@ -131,17 +113,7 @@ no longer a primitive principle.
 
 The derivation is fully internal to the framework:
 
-$
-c_\chi
-\;\to\;
-A_n^{\max} = \frac{c_\chi}{\sqrt{\lambda_n}}
-\;\to\;
-L_{\mathrm{BI}}
-\;\to\;
-L_{\mathrm{BI}} \cap \mathbb{N}_q
-\;\to\;
-n_{\mathrm{sat}} \in \mathbb{N}
-$
+$c_\chi \;\to\; A_n^{\max} = \frac{c_\chi}{\sqrt{\lambda_n}} \;\to\; L_{\mathrm{BI}} \;\to\; L_{\mathrm{BI}} \cap \mathbb{N}_q \;\to\; n_{\mathrm{sat}} \in \mathbb{N}$
 
 No external parameter is introduced.
 
@@ -154,9 +126,7 @@ It does not yet derive **which shell** is selected.
 That remaining problem is precisely the scope of **O23**, where the target is
 to explain the emergence of the threshold
 
-$
-\Sigma_c(n_3) = 3
-$
+$\Sigma_c(n_3) = 3$
 
 and the privileged role of the three-dimensional stable sector.
 
@@ -199,9 +169,7 @@ More precisely, the paper:
 
 - determine which shell is selected
 - derive
-  $
-  \Sigma_c(n_3) = 3
-  $
+  $\Sigma_c(n_3) = 3$
   from the substrate
 - establish large-$q$ asymptotics of the locking mechanism
 - extend the theorem beyond Heisenberg graphs
@@ -251,11 +219,7 @@ This is the first fully theorem-level closure of the shell-alignment problem.
 - discrete admissibility support $\mathbb{N}_q$
 - continuous Born–Infeld saturation locus $L_{\mathrm{BI}}$
 - theorem:
-  $
-  L_{\mathrm{BI}} \cap \mathbb{N}_q \neq \varnothing
-  \;\Rightarrow\;
-  n_{\mathrm{sat}} \in \mathbb{N}
-  $
+  $L_{\mathrm{BI}} \cap \mathbb{N}_q \neq \varnothing \;\Rightarrow\; n_{\mathrm{sat}} \in \mathbb{N}$
 - shell-alignment as a corollary
 - foundational closure of the first open problem of **O21**
 
@@ -285,9 +249,7 @@ Derive the specific shell-selection rule rather than only shell-level locking.
 
 Explain why the relevant closure occurs at
 
-$
-\Sigma_c(n_3) = 3
-$
+$\Sigma_c(n_3) = 3$
 
 and whether this follows necessarily from the stable directions selected by
 $\Pi$.
@@ -305,9 +267,7 @@ Test whether projection locking extends beyond Heisenberg Cayley graphs.
 
 Complete the unconditional derivation of
 
-$
-\delta_{\mathrm{pair}} \to \beta^*
-$
+$\delta_{\mathrm{pair}} \to \beta^*$
 
 once shell selection itself is derived.
 
