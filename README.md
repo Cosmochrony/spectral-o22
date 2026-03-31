@@ -1,5 +1,3 @@
-# O22 Cosmochrony README
-
 This repository contains the source of the **O22 Cosmochrony paper**  
 [*Shell-Alignment from Projection Locking: A Discrete Admissibility Theorem under Born–Infeld
 Saturation*](out/SpectralO22.pdf).
