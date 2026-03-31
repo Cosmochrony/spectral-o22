@@ -1,0 +1,664 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\cchi}{c_{\chi}}
+\newcommand{\Amax}{A_n^{\max}}
+\newcommand{\sigpair}{\sigma^{\mathrm{can}}_{\mathrm{pair}}}
+\newcommand{\nsat}{n_{\mathrm{sat}}}
+\newcommand{\nobs}{n^{\mathrm{obs}}_3}
+\newcommand{\dpair}{\delta_{\mathrm{pair}}}
+\newcommand{\bstar}{\beta^*}
+\newcommand{\Cay}{\mathrm{Cay}(G_q, S_q)}
+\newcommand{\Heis}{\mathrm{Heis}_3(\mathbb{Z}/q\mathbb{Z})}
+
+\title{Shell-Alignment from Projection Locking:\\
+A Discrete Admissibility Theorem under Born--Infeld Saturation\\
+\medskip
+\large O22 --- Spectral Admissibility Sub-programme}
+\author{J.~Beau\\Independent Researcher}
+\date{2026}
+
+\begin{document}
+
+  \maketitle
+
+  \begin{abstract}
+    Within the spectral admissibility sub-programme of Cosmochrony, the canonical
+    fibre-level observable $\sigpair(n)$ on the Cayley graph
+    $\mathrm{Cay}(\mathrm{Heis}_3(\mathbb{Z}/q\mathbb{Z}), S_q)$ governs the
+    charged-lepton mass hierarchy through a capacity decay exponent $\dpair$.
+    O21 conjectured that physical admissibility requires the observable saturation
+    rank $\nobs$ to align with a BFS shell of this graph --- a condition left open
+    as an independent geometric hypothesis.
+
+    We prove that this conjecture is not independent: it is a theorem.
+    The proof identifies a \emph{projection locking} mechanism intrinsic to the
+    non-injective projection $\Pi$ of the Cosmochrony framework.
+    The argument rests on a distinction between two types of discreteness.
+    The shell index $n$ is discrete as a matter of graph geometry.
+    The observable $\sigpair(n)$ is a discrete sample of a continuous effective decay law
+    $\tilde{\sigma}(t) \sim C\,t^{-\dpair}$ inherited from the underlying $\chi$-relaxation
+    dynamics; the Born--Infeld admissibility constraint $A_n \leq \cchi/\sqrt{\lambda_n}$
+    is therefore a condition on a continuously varying, generically irrational amplitude.
+    Nothing in the Born--Infeld dynamics alone forces saturation to occur at an integer
+    depth.
+
+    Shell-alignment follows from a third ingredient: the observable space of $\Pi$
+    decomposes as $\mathcal{O} = \bigsqcup_{n \in \mathcal{N}_q} \mathcal{O}_n$,
+    indexed by BFS shells, so that $\Pi$ cannot encode a saturation event at a
+    non-admissible depth.
+    The physically realisable saturation depth is therefore the first element of
+    $\mathcal{L}_{\mathrm{BI}} \cap \mathcal{N}_q$, which lies in $\mathbb{N}$ by
+    construction.
+    At its core, the proof reduces to the incompatibility between a continuous saturation
+    locus and a discrete admissibility support: the discreteness of $\nsat$ is not assumed
+    but derived as a constraint on admissible realisations under~$\Pi$.
+    As a corollary, the logarithmic commensurability condition of O21 is recovered
+    as the observable signature of projection locking, not as an independent resonance
+    principle.
+    The entire derivation is foundational: the chain
+    $\cchi \to A_n^{\max} \to \mathcal{L}_{\mathrm{BI}} \cap \mathcal{N}_q \to
+    \nsat \in \mathbb{N}$
+    introduces no parameter external to the Cosmochrony substrate.
+    The problem of determining \emph{which} shell is selected --- equivalent to deriving
+    $\Sigma_c(n_3) = 3$ --- remains open and is the subject of~O23.
+  \end{abstract}
+
+  \paragraph{Keywords.}
+    spectral admissibility; projection locking; Born--Infeld admissibility; non-injective projection;
+    BFS shell structure; Heisenberg graphs; Weil representation; fibre-level observable;
+    continuous decay law; discrete realisation; shell-alignment; lepton mass hierarchy;
+    cascade exponent; subdiffusive growth
+
+    \tableofcontents
+
+    \clearpage
+  \section{Introduction}
+  \label{sec:intro}
+
+  \subsection{The open problem after O21}
+    \label{subsec:open_after_o21}
+
+    The spectral admissibility sub-programme of Cosmochrony~\cite{Cosmochrony} has established,
+    through O16--O21~\cite{Beau2026a20,Beau2026a21,Beau2026a22,Beau2026a23,Beau2026a24,Beau2026a25},
+    that the physically relevant observable for the charged-lepton mass hierarchy is the canonical
+    fibre-level pair observable $\sigpair(n)$, defined on conjugate Weil blocks $\{\rho_c, \rho_{q-c}\}$
+    of $\Heis$.
+    The capacity exponent $\dpair \approx 7.44$, extracted from the power-law decay
+    $\sigpair(n) \sim C n^{-\dpair}$, lies within the phenomenological window $[7.4, 10.6]$, and
+    the structural relation $\bstar = 1/(\dpair + 1/2)$ recovers the cascade exponent
+    $\bstar \approx 0.126$ consistent with the observed charged-lepton mass ratios.
+
+    O21~\cite{Beau2026a25} constructed a fully observable and intrinsic saturation
+    rank $\nobs(n_0, n_1, q)$, invariant under all pipeline normalisations, and stated the
+    following conjecture:
+    \begin{quote}
+      \emph{Shell-Alignment Conjecture (O21 Conjecture~4.1).}
+      A conjugate pair $\{c, q-c\}$ is physically admissible if and only if
+      $\mathrm{dist}(\nobs, \{n \mid S_n \neq \emptyset\}) \ll 1$,
+      where $S_n$ denotes the BFS shell at depth $n$ in~$\Cay$.
+    \end{quote}
+    Two problems were identified as open: establishing this conjecture, and deriving the
+    threshold $\Sigma_c(n_3) = 3$ from the Born--Infeld admissibility structure.
+    The present paper addresses the first problem.
+
+  \subsection{Main result}
+    \label{subsec:main_result}
+
+    We prove (Theorem~\ref{thm:locking}) that every physically realisable saturation depth
+    satisfies $\nsat \in \mathcal{N}_q \subset \mathbb{N}$, where $\mathcal{N}_q$ is the set
+    of BFS shell depths of $\Cay$.
+    The proof is an intersection argument: the Born--Infeld saturation locus
+    $\mathcal{L}_{\mathrm{BI}} \subset \mathbb{R}_{>0}$ is a priori real-valued, but physical
+    realisability under $\Pi$ constrains it to $\mathcal{N}_q$.
+    Shell-alignment is therefore not a hypothesis about the spectral dynamics of $\rho_c$
+    but a theorem about the interaction between the continuous Born--Infeld constraint and
+    the discrete admissibility filter of~$\Pi$.
+
+    It is important to note that this result is not trivial.
+    The observable $\sigpair(n)$ is evaluated along a discrete sequence of shell depths
+    $n \in \mathcal{N}_q$, but this geometric discreteness does not by itself imply that the
+    saturation condition is satisfied at an integer depth.
+    The Born--Infeld saturation locus $\mathcal{L}_{\mathrm{BI}}$ is defined by the vanishing
+    of a continuous amplitude function; its elements are generically irrational and carry no
+    information about the shell structure of~$\Cay$.
+    The discreteness of $\nsat$ is not assumed: it is derived as a constraint on admissible
+    realisations under the projection~$\Pi$, and it is this derivation that constitutes the
+    content of the theorem.
+
+  \subsection{Organisation}
+    \label{subsec:organisation}
+
+    Section~\ref{sec:background} recalls the relevant results of O16--O21 and fixes notation.
+    Section~\ref{sec:two_discretenesses} establishes the key distinction between the discrete
+    shell index and the continuous effective decay law of~$\sigpair$.
+    Section~\ref{sec:locking} states and proves the Projection Locking theorem.
+    Section~\ref{sec:corollary_alignment} recovers the shell-alignment conjecture as a corollary
+    and identifies the logarithmic commensurability of O21 as its observable signature.
+    Section~\ref{sec:open} discusses open directions, in particular the problem of shell selection
+    (O23) and the large-$q$ numerical programme.
+
+  \section{Background}
+  \label{sec:background}
+
+  \subsection{The Born--Infeld admissibility bound}
+    \label{subsec:bi_bound}
+
+    The Cosmochrony framework~\cite{Cosmochrony,Beau2026c} derives the Born--Infeld effective
+    action as the unique analytic completion compatible with bounded projective transport capacity.
+    For a substrate field $\chi$ with field strength $F = D\chi$, the admissibility bound on mode
+    amplitudes takes the form~\cite{Beau2026a1}
+    \begin{equation}
+      \label{eq:bi_bound}
+      A_n \leq \Amax := \frac{\cchi}{\sqrt{\lambda_n}},
+    \end{equation}
+    where $\lambda_n$ is the Laplacian eigenvalue of the mode and $\cchi$ is the saturation scale
+    of the Born--Infeld action, encoding the maximal transport capacity of the substrate.
+
+    \begin{remark}[Dynamic character of the bound]
+      \label{rem:dynamic_bound}
+      The bound~\eqref{eq:bi_bound} is \emph{not} uniform in $n$: the admissible amplitude
+      $\Amax = \cchi/\sqrt{\lambda_n}$ varies with the spectral mode.
+      As the BFS depth $n$ increases and $\lambda_n$ evolves with the shell geometry of~$\Cay$,
+      the admissibility envelope tightens or relaxes according to the spectral structure of the graph.
+      This dynamic character is essential to the locking argument of Section~\ref{sec:locking}.
+    \end{remark}
+
+  \subsection{The canonical fibre-level observable}
+    \label{subsec:canonical_observable}
+
+    The canonical pair observable $\sigpair(n)$ was introduced in O19~\cite{Beau2026a23}
+    as the pipeline-independent combination of the Gram--Schmidt spans of conjugate
+    Weil blocks $\rho_c$ and $\rho_{q-c}$ on $\Heis$.
+    It is defined at the fibre level by eliminating the residual amplitude factor
+    $r(c,q) \in \{1,2,3,4\}$, which is a normalisation artefact of the O12/O13
+    pipeline~\cite{Beau2026a16,Beau2026a17} rather than an arithmetic invariant of
+    the Weil representation.
+    By construction, $\sigpair(n)$ is:
+    \begin{itemize}
+      \item invariant under conjugation $c \leftrightarrow q-c$, reflecting the identity
+      $\rho_{q-c} = \overline{\rho_c}$ established in O17~\cite{Beau2026a21};
+      \item independent of Gram--Schmidt seed and basis choices (O19 Proposition~7.2);
+      \item evaluated at discrete shell depths $n \in \mathcal{N}_q$, while inheriting a
+      continuous effective decay law from the underlying Weil representation
+      dynamics (Section~\ref{subsec:dynamical_continuity}).
+    \end{itemize}
+    The distinction between the raw cumulative span $\Sigma^{(c)}(n) \in \mathbb{Z}$
+    and the normalised observable $\sigma_c(n) = \Sigma^{(c)}(n)/q$ is maintained
+    throughout; $\sigpair(n)$ operates at the $\sigma_c$ level.
+
+  \subsection{The saturation rank and its continuous decay law}
+    \label{subsec:saturation_rank}
+
+    O21~\cite{Beau2026a25} constructs the observable saturation rank
+    $\nobs(n_0, n_1, q)$ by eliminating both the amplitude $C$ and the exponent $\dpair$
+    from the power-law description of $\sigpair$.
+    Given two pre-saturation measurements at depths $n_0 < n_1$ in the power-law regime,
+    the rank is defined as
+    \begin{equation}
+      \label{eq:nobs_def}
+      \nobs(n_0, n_1, q) := n_0 \left(\frac{q^2\,\sigpair(n_0)}{9}\right)^{1/\delta(n_0,n_1)},
+    \end{equation}
+    where $\delta(n_0, n_1) = -\log(\sigpair(n_1)/\sigpair(n_0))/\log(n_1/n_0)$ is the
+    local exponent estimated from the two measurements.
+    By O21 Proposition~3.2, $\nobs$ is independent of the choice of $(n_0, n_1)$ within
+    an exact power-law regime, and invariant under global rescaling of~$\sigpair$.
+
+    The key structural point is that $\nobs$ is derived from a \emph{continuous} decay
+    law: the local exponent $\delta(n_0, n_1)$ and the amplitude ratio are both functions
+    of the continuously varying effective envelope $\tilde{\sigma}$ of
+    Lemma~\ref{lem:continuous_decay}.
+    Even though $\nobs$ is computed from measurements at integer depths, it is in general
+    a real number, and there is no reason internal to its definition for it to be an integer.
+    Shell-alignment asserts that $\nobs \in \mathcal{N}_q$; this is the content of
+    Corollary~\ref{cor:alignment}.
+
+  \section{Two Types of Discreteness}
+  \label{sec:two_discretenesses}
+
+  The argument of Section~\ref{sec:locking} depends on a distinction that must be made precise.
+
+  \subsection{Geometric discreteness: the shell index}
+    \label{subsec:geometric_discreteness}
+
+    The Cayley graph $\Cay$ with $G_q = \Heis$ carries a natural BFS shell
+    structure $S_0, S_1, S_2, \ldots$ determined by the word metric $d$ on~$G_q$.
+    The shell index $n \in \mathbb{N}$ is discrete as a matter of graph geometry: there are no
+    vertices at non-integer depths.
+    The observable $\sigpair(n)$ is therefore evaluated along a discrete sequence of depths.
+
+  \subsection{Dynamical continuity: the effective decay law}
+    \label{subsec:dynamical_continuity}
+
+    The power-law decay $\sigpair(n) \sim C n^{-\dpair}$ is a consequence of the Weil
+    representation dynamics of $\rho_c$ on $\Heis$~\cite{Beau2026a20,Beau2026a21}.
+    This decay law is \emph{continuous} in the effective sense: it interpolates smoothly between
+    consecutive shell depths, and its parameters $(C, \dpair)$ are determined by the continuous
+    spectral structure of the representation, not by the discrete shell boundaries.
+
+    \begin{remark}[Non-triviality of shell-alignment]
+      \label{rem:non_trivial}
+      The fact that $n$ is geometrically discrete does not make shell-alignment trivial.
+      The Born--Infeld saturation condition $A_n \approx \Amax$ is a condition on a continuously
+      varying amplitude.
+      Nothing in the decay law of $\sigpair$ forces this condition to be satisfied exactly at an
+      integer depth rather than strictly between two consecutive shells.
+      Shell-alignment asserts that the continuous saturation condition and the discrete shell geometry
+      are commensurate at the saturation point.
+      This commensurability requires an explanation; providing it is the content of
+      Theorem~\ref{thm:locking}.
+    \end{remark}
+
+  \section{Projection Locking}
+  \label{sec:locking}
+
+  \subsection{Admissible realisation under $\Pi$}
+    \label{subsec:admissible_realisation}
+
+    The central concept of this section is that of a \emph{physically admissible realisation}
+    of a saturation event.
+    Saturation is not merely the mathematical condition $A_n = \Amax$; it is an event that must
+    be \emph{encoded} by the projection $\Pi$ as a distinguishable effective state.
+    We formalise this as follows.
+
+    \begin{definition}[Projectively admissible depth]
+      \label{def:admissible_depth}
+      A depth $n \in \mathbb{R}_{>0}$ is \emph{projectively admissible} if the BFS shell
+      $S_n = \{g \in G_q \mid d(e, g) = n\}$ is non-empty, i.e.\ if $n \in \mathbb{N}$ and
+      $S_n \neq \emptyset$ in~$\Cay$.
+      The set of projectively admissible depths is denoted
+      \begin{equation}
+        \label{eq:admissible_depths}
+        \mathcal{N}_q := \{n \in \mathbb{N} \mid S_n \neq \emptyset\} \subset \mathbb{N}.
+      \end{equation}
+    \end{definition}
+
+    \begin{definition}[Admissible realisation of a saturation event]
+      \label{def:admissible_realisation}
+      A saturation event at depth $\nsat$ is \emph{physically realisable} if there exists a
+      substrate configuration $\chi \in \Omega$ such that:
+      \begin{enumerate}
+        \item[(R1)] the Born--Infeld bound is reached: $A_{\nsat} = c_\chi / \sqrt{\lambda_{\nsat}}$;
+        \item[(R2)] the projection $\Pi(\chi)$ encodes a non-trivial effective state supported on
+        the shell $S_{\nsat}$, i.e.\ $\Pi(\chi) \in \mathcal{O}_{\nsat}$ where
+        $\mathcal{O}_{\nsat}$ is the component of the observable space $\mathcal{O}$ indexed
+        by $S_{\nsat}$.
+      \end{enumerate}
+    \end{definition}
+
+    \begin{remark}[Observable space decomposition]
+      \label{rem:observable_decomposition}
+      The observable space $\mathcal{O}$ of the Cosmochrony framework decomposes as
+      \begin{equation}
+        \label{eq:observable_decomp}
+        \mathcal{O} = \bigsqcup_{n \in \mathcal{N}_q} \mathcal{O}_n,
+      \end{equation}
+      where each component $\mathcal{O}_n$ encodes the effective states resolvable at shell depth~$n$.
+      This decomposition is a consequence of the non-injectivity of $\Pi$: since $\Pi$ collapses
+      the fibre $\Pi^{-1}(o)$ to a single effective state $o \in \mathcal{O}$, and since the
+      Gram--Schmidt span tracker measures novelty \emph{per BFS shell}, distinct shells index
+      distinct components of~$\mathcal{O}$.
+      Crucially, there is no component $\mathcal{O}_{n'}$ for $n' \notin \mathcal{N}_q$:
+      the projection $\Pi$ cannot produce an effective state at a non-admissible depth
+      because no substrate configuration has a BFS-distance to the identity that is a
+      non-integer real number.
+    \end{remark}
+
+  \subsection{Three preparatory lemmas}
+    \label{subsec:lemmas}
+
+    \begin{lemma}[Discrete support of $\Pi$]
+      \label{lem:discrete_support}
+      For any substrate configuration $\chi \in \Omega$, the effective state $\Pi(\chi)$ is
+      supported on $\mathcal{N}_q$:
+      \begin{equation}
+        \label{eq:discrete_support}
+        \mathrm{supp}(\Pi(\chi)) \subset \mathcal{N}_q \subset \mathbb{N}.
+      \end{equation}
+      In particular, $\Pi$ cannot encode an effective state at any depth $n' \notin \mathcal{N}_q$.
+    \end{lemma}
+
+    \begin{proof}
+      The Gram--Schmidt span tracker of the O12/O13 pipeline~\cite{Beau2026a16,Beau2026a17}
+      measures the rank of the projection of the Weil representation $\rho_c$ onto the subspace
+      spanned by group elements at BFS distance $\leq n$ from the identity.
+      This rank is an integer-valued function of $n \in \mathcal{N}_q$, defined only at shell
+      boundaries.
+      The canonical observable $\sigpair(n)$ is constructed from this rank via the normalisation
+      of O19~\cite{Beau2026a23}, and is therefore defined only at $n \in \mathcal{N}_q$.
+      No effective state of the form $\Pi(\chi) \in \mathcal{O}_{n'}$ exists for
+      $n' \notin \mathcal{N}_q$, since the corresponding component $\mathcal{O}_{n'}$ is empty
+      by Definition~\ref{def:admissible_depth}.
+    \end{proof}
+
+    \begin{lemma}[Continuous effective decay law]
+      \label{lem:continuous_decay}
+      There exists a continuous, monotone decreasing function
+      $\tilde{\sigma} : \mathbb{R}_{>0} \to \mathbb{R}_{>0}$ such that
+      \begin{equation}
+        \label{eq:continuous_interp}
+        \tilde{\sigma}(n) = \sigpair(n) \quad \text{for all } n \in \mathcal{N}_q,
+      \end{equation}
+      and such that in the pre-saturation regime
+      \begin{equation}
+        \label{eq:continuous_decay}
+        \tilde{\sigma}(t) = C \, t^{-\dpair} \bigl(1 + O(t^{-1})\bigr), \qquad t \to \infty,
+      \end{equation}
+      with $C > 0$ and $\dpair > 0$.
+      In particular, the amplitude $A(t)$ associated with $\tilde{\sigma}(t)$ varies
+      continuously in $t$ and is generically irrational; the saturation condition
+      $A(t) = \cchi/\sqrt{\lambda(t)}$ is a condition on a real-valued, not
+      integer-valued, parameter.
+    \end{lemma}
+
+    \begin{proof}[Sketch]
+The observable $\sigpair(n)$ is constructed from averaged spectral quantities
+associated with the $\chi$-relaxation dynamics of the Cosmochrony
+substrate~\cite{Cosmochrony}.
+This dynamics is intrinsically continuous in the relaxation parameter $\tau$;
+the discrete index $n \in \mathcal{N}_q$ arises from the sampling induced by
+the projection $\Pi$ onto BFS shells, not from a discreteness in the underlying
+dynamics.
+The values $\sigpair(n)$ therefore constitute a discrete sample of a continuously
+defined process, and $\tilde{\sigma}$ is an interpolating envelope of this sample.
+The construction does not rely on any specific representation-theoretic realisation;
+it requires only the existence of a continuous relaxation parameter and the
+monotone decay of admissible amplitudes under the Born--Infeld
+bound~\eqref{eq:bi_bound}.
+Monotonicity of $\tilde{\sigma}$ follows directly from the latter: admissible
+amplitudes decrease monotonically as the saturation bound tightens with increasing
+spectral eigenvalue along the BFS trajectory.
+    \end{proof}
+
+    \begin{remark}[Independence from representation-theoretic smoothness]
+      \label{rem:no_rep_smoothness}
+      The existence of $\tilde{\sigma}$ does not depend on the smoothness of Weil
+      representation matrix coefficients, nor on any specific algebraic property of
+      $\Heis$.
+      It is a consequence of the continuity of the underlying $\chi$-relaxation flow,
+      which is a foundational assumption of the Cosmochrony framework~\cite{Cosmochrony}
+      and is independent of the discrete group structure used to model it.
+    \end{remark}
+
+    \begin{lemma}[Born--Infeld saturation is a real-valued condition]
+      \label{lem:bi_real}
+      The Born--Infeld saturation locus
+      \begin{equation}
+        \label{eq:bi_locus}
+        \mathcal{L}_{\mathrm{BI}} :=
+        \bigl\{ t \in \mathbb{R}_{>0} \;\big|\; A(t) = \cchi / \sqrt{\lambda(t)} \bigr\}
+      \end{equation}
+      is generically a discrete subset of $\mathbb{R}_{>0}$, but contains no information about
+      the shell structure of $\Cay$.
+      In particular, the elements of $\mathcal{L}_{\mathrm{BI}}$ are not constrained to
+      $\mathcal{N}_q$ by the Born--Infeld dynamics alone.
+    \end{lemma}
+
+    \begin{proof}
+      The saturation condition $A(t) = \cchi / \sqrt{\lambda(t)}$ equates two independently
+      defined functions of $t$: the effective amplitude $A(t)$ derived from $\tilde{\sigma}(t)$
+      via Lemma~\ref{lem:continuous_decay}, and the spectral bound $\cchi/\sqrt{\lambda(t)}$
+      derived from the Laplacian eigenvalue profile of $\Cay$.
+      Both functions are continuous in $t$.
+      Their intersection $\mathcal{L}_{\mathrm{BI}}$ is generically a finite set of real numbers,
+      determined by the dynamics of $\tilde{\sigma}$ and $\lambda$, with no reason to
+      coincide with $\mathcal{N}_q$ unless an additional constraint enforces it.
+      That additional constraint is provided by $\Pi$, as established in
+      Theorem~\ref{thm:locking} below.
+    \end{proof}
+
+  \subsection{Main theorem}
+    \label{subsec:main_theorem}
+
+    \begin{theorem}[Projection Locking under Born--Infeld Spectral Admissibility]
+      \label{thm:locking}
+      Let $\sigpair(n)$ be the canonical fibre-level observable on $\Cay$,
+      subject to the Born--Infeld admissibility constraint~\eqref{eq:bi_bound} for each spectral
+      mode, and let $\tilde{\sigma}$ be its continuous effective envelope
+      (Lemma~\ref{lem:continuous_decay}).
+      Let $\Pi$ be the non-injective projection of Cosmochrony, whose admissible outputs decompose
+      as in~\eqref{eq:observable_decomp}.
+
+      Then every physically realisable saturation depth satisfies
+      \begin{equation}
+        \label{eq:locking}
+        \nsat \in \mathcal{N}_q \subset \mathbb{N}.
+      \end{equation}
+      That is, the Born--Infeld saturation condition can be physically realised only at depths
+      at which a BFS shell of $\Cay$ is available to support the projection.
+    \end{theorem}
+
+    \begin{proof}
+      Let $t^* \in \mathcal{L}_{\mathrm{BI}}$ be a point in the saturation locus
+      (Lemma~\ref{lem:bi_real}).
+      We show that if the saturation event at $t^*$ is physically realisable in the sense of
+      Definition~\ref{def:admissible_realisation}, then $t^* \in \mathcal{N}_q$.
+
+      By condition (R2) of Definition~\ref{def:admissible_realisation}, physical realisability
+      requires $\Pi(\chi) \in \mathcal{O}_{t^*}$.
+      By Remark~\ref{rem:observable_decomposition}, the component $\mathcal{O}_{t^*}$ is
+      non-empty if and only if $t^* \in \mathcal{N}_q$.
+      If $t^* \notin \mathcal{N}_q$, then $\mathcal{O}_{t^*} = \emptyset$, and condition (R2)
+      cannot be satisfied by any $\chi \in \Omega$: there is no effective state available to
+      encode the saturation event.
+
+      Therefore, a saturation event at $t^*$ is physically realisable only if
+      $t^* \in \mathcal{N}_q$.
+      Since the physically realisable saturation depth is by definition the first $t^* \in
+      \mathcal{L}_{\mathrm{BI}} \cap \mathcal{N}_q$, we conclude $\nsat \in \mathcal{N}_q
+      \subset \mathbb{N}$.
+    \end{proof}
+
+    \begin{remark}[Saturation versus mathematical zero of a function]
+      \label{rem:saturation_vs_zero}
+      The locking theorem distinguishes between two notions that must not be conflated.
+      The Born--Infeld saturation locus $\mathcal{L}_{\mathrm{BI}}$ is a mathematical set of
+      real numbers at which a continuous amplitude condition is satisfied; it is well-defined
+      for all $t \in \mathbb{R}_{>0}$.
+      Physical realisation, by contrast, requires the saturation event to be \emph{encoded}
+      by $\Pi$ as a distinguishable effective state.
+      This encoding is available only at $\mathcal{N}_q$.
+      The locking is therefore not a property of the decay law alone, nor of the shell structure
+      alone, but of their interaction through~$\Pi$.
+    \end{remark}
+
+    \begin{remark}[Independence from $\sigma_{\min}$]
+      \label{rem:no_sigma_min}
+      The proof uses only the \emph{existence} of a saturation locus $\mathcal{L}_{\mathrm{BI}}
+      \neq \emptyset$, which follows from the Born--Infeld bound~\eqref{eq:bi_bound} and the
+      decay of $\tilde{\sigma}$.
+      It does not require knowing the value of $\sigma_{\min} := \tilde{\sigma}(\nsat)$,
+      nor its expression in terms of $\cchi$ and $\lambda_{\nsat}$.
+      The derivation of this explicit value is a separate problem, deferred to a subsequent
+      analysis.
+    \end{remark}
+
+    \begin{remark}[Role of $\cchi$]
+      \label{rem:c_chi}
+      The saturation scale $\cchi$ is not a free parameter in the Cosmochrony framework:
+      it is determined by the maximal transport capacity and connectivity density of the
+      underlying relational substrate~\cite{Cosmochrony,Beau2026c}.
+      The foundational chain is therefore
+      \begin{equation}
+        \label{eq:chain_cchi}
+        \cchi
+        \;\longrightarrow\;
+        \Amax = \frac{\cchi}{\sqrt{\lambda_n}}
+        \;\longrightarrow\;
+        \mathcal{L}_{\mathrm{BI}} \subset \mathbb{R}_{>0}
+        \;\longrightarrow\;
+        \mathcal{L}_{\mathrm{BI}} \cap \mathcal{N}_q
+        \;\longrightarrow\;
+        \nsat \in \mathbb{N},
+      \end{equation}
+      and no parameter external to the Cosmochrony substrate is introduced at any step.
+    \end{remark}
+
+  \section{Shell-Alignment as a Corollary}
+  \label{sec:corollary_alignment}
+
+  \begin{corollary}[Shell-alignment conjecture resolved]
+    \label{cor:alignment}
+    Under the hypotheses of Theorem~\ref{thm:locking}, the observable saturation
+    rank $\nobs(n_0, n_1, q)$ of O21 Definition~3.1~\cite{Beau2026a25} satisfies
+    \begin{equation}
+      \label{eq:alignment}
+      \mathrm{dist}\!\left(\nobs,\, \{n \mid S_n \neq \emptyset\}\right) \ll 1,
+    \end{equation}
+    i.e.\ shell-alignment holds as a consequence of projection locking.
+  \end{corollary}
+
+  \begin{proof}
+    By Theorem~\ref{thm:locking}, $\nsat \in \mathcal{N}_q$.
+    By O21 Proposition~3.2~\cite{Beau2026a25}, $\nobs = \nsat$ whenever $\sigpair$
+    follows an exact power law on the pre-saturation window $(n_0, n_1)$.
+    In this regime the distance to the nearest BFS shell is therefore zero:
+    $\mathrm{dist}(\nobs, \mathcal{N}_q) = 0$.
+  \end{proof}
+
+  \begin{remark}[Finite-size effects and the residual at $q = 61$]
+    \label{rem:finite_size}
+    The numerical value $\mathrm{dist}(\nobs, \mathbb{Z}) \approx 0.20$ observed at
+    $q = 61$~\cite{Beau2026a25} is consistent with the exact-power-law hypothesis
+    of O21 Proposition~3.2 being satisfied only approximately at small primes.
+    Two sources of finite-size deviation are expected: the pre-saturation window
+    $(n_0, n_1)$ is short (of order $O(\log q)$ BFS steps, as established in
+    O8~\cite{Beau2026a12}), and the discrete shell spacing is coarse relative
+    to the continuous saturation locus $\mathcal{L}_{\mathrm{BI}}$.
+    Both effects are expected to decrease as $q \to \infty$.
+    The systematic verification of this convergence is part of the large-$q$
+    numerical programme described in Section~\ref{subsec:numerical};
+    it constitutes the primary empirical test of Corollary~\ref{cor:alignment}.
+  \end{remark}
+
+  \begin{remark}[Logarithmic commensurability recovered]
+    \label{rem:log_commensurability}
+    O21 Remark~4.2~\cite{Beau2026a25} observed that shell-alignment is equivalent to a
+    logarithmic commensurability condition: the local decay rate $\dpair$ and the amplitude
+    ratio $A = q^2 \sigma(n_0)/9$ must be commensurate with the integer shell structure.
+    Corollary~\ref{cor:alignment} shows that this commensurability is not an independent
+    resonance condition imposed from outside, but the \emph{observable signature} of
+    projection locking: the continuous decay law and the discrete shell geometry are commensurate
+    at the saturation point \emph{because} the locking mechanism forces the saturation event
+    onto a shell.
+    The terminology ``resonance'' in O21 is therefore a description at the level of the
+    observable; the present paper provides the underlying mechanism.
+  \end{remark}
+
+  \section{Open Directions}
+  \label{sec:open}
+
+  \subsection{Shell selection: the problem of O23}
+    \label{subsec:o23}
+
+    Theorem~\ref{thm:locking} establishes that $\nsat \in \mathbb{N}$, i.e.\ that saturation
+    occurs \emph{on} a BFS shell.
+    It does not determine \emph{which} shell.
+    Determining the selected shell requires identifying the depth $\nsat$ as a function of
+    $(\cchi, \lambda_n, \text{graph geometry})$, and in particular explaining why
+    $\Sigma_c(n_3) = 3$ --- the threshold underlying the definition of $\nobs$ in O21.
+    This is the subject of O23: once the locking mechanism is established, the question
+    ``why a shell?'' is resolved and the question ``why \emph{this} shell?'' becomes
+    well-posed.
+    The number 3 is interpreted in O21 as the number of physically stable directions
+    selected by $\Pi$ in the Weil realisation of $\Heis$; O23 will determine whether this
+    is a derived consequence of the Born--Infeld structure or an independent arithmetic
+    property of the Weil representation.
+
+  \subsection{Large-$q$ numerical programme}
+    \label{subsec:numerical}
+
+    The numerical evidence for shell-alignment currently rests on a single pair $(c, q-c) = (1, 60)$
+    at $q = 61$, with $\mathrm{dist}(\nobs, \mathbb{Z}) \approx 0.20$.
+    This intermediate value neither confirms exact alignment nor refutes it: it is consistent
+    with a finite-size deviation from the exact locking point, expected to decrease as $q \to \infty$.
+    An extended numerical campaign at larger primes and across multiple conjugate pairs is required
+    to provide empirical confirmation of Corollary~\ref{cor:alignment} and to constrain the rate of
+    convergence.
+    This programme is a prerequisite for the full quantitative validation of O23.
+
+  \subsection{Generalisation beyond $\Heis$}
+    \label{subsec:generalisation}
+
+    The locking argument of Section~\ref{sec:locking} uses the structure of $\Pi$ as a discrete
+    admissibility filter, but does not depend on the specific group structure of $\Heis$.
+    A generalisation to other groups carrying a Weil-type representation and a natural BFS
+    shell structure is therefore in principle accessible, and would strengthen the universality
+    of the projection locking mechanism.
+
+  \section{Conclusion}
+  \label{sec:conclusion}
+
+  This paper establishes that the shell-alignment conjecture of
+  O21~\cite{Beau2026a25} is not an independent geometric condition but a
+  structural consequence of projection locking under Born--Infeld spectral
+  admissibility.
+
+  The argument proceeds in three steps.
+  First, we distinguish two types of discreteness: the shell index $n \in \mathcal{N}_q$,
+  which is geometric, and the effective decay law of $\sigpair$, which is continuous
+  (Lemma~\ref{lem:continuous_decay}).
+  The Born--Infeld saturation condition $A_n \approx \cchi/\sqrt{\lambda_n}$ is a
+  condition on the continuously varying amplitude, and the saturation locus
+  $\mathcal{L}_{\mathrm{BI}} \subset \mathbb{R}_{>0}$ carries no information about
+  the discrete shell structure (Lemma~\ref{lem:bi_real}).
+  Second, we formalise the non-injective projection $\Pi$ as a discrete admissibility
+  filter: its observable space decomposes as $\mathcal{O} = \bigsqcup_{n \in \mathcal{N}_q}
+  \mathcal{O}_n$, and no effective state exists at non-admissible depths
+  (Lemma~\ref{lem:discrete_support}, Remark~\ref{rem:observable_decomposition}).
+  Third, we combine these two structures: a saturation event is physically realisable
+  only if condition (R1) (Born--Infeld bound reached) and condition (R2) (projection
+  support available) are simultaneously satisfied, which forces $\nsat \in \mathcal{N}_q$
+  (Theorem~\ref{thm:locking}).
+
+  Shell-alignment is therefore not imposed by the spectral dynamics of the Weil
+  representation alone, nor by the geometry of $\Cay$ alone, but emerges as a
+  necessary consequence of their interaction through $\Pi$ under the Born--Infeld
+  constraint.
+  The ``resonance'' language of O21 Remark~4.2 is recovered as the observable
+  signature of this locking at the level of $\nobs$ (Corollary~\ref{cor:alignment},
+  Remark~\ref{rem:log_commensurability}): what appears as commensurability between
+  a continuous decay rate and a discrete shell structure is the projection of a single
+  mechanism onto two different descriptive levels.
+
+  The locking mechanism is entirely foundational in the sense of
+  Remark~\ref{rem:c_chi}: the chain
+  $\cchi \to \mathcal{L}_{\mathrm{BI}} \to \mathcal{L}_{\mathrm{BI}} \cap \mathcal{N}_q
+  \to \nsat \in \mathbb{N}$
+  introduces no parameter external to the Cosmochrony substrate.
+
+  Two problems remain open after this paper.
+  The first is the determination of \emph{which} shell is selected: identifying
+  $\nsat$ as a function of $(\cchi, \lambda_n, \text{graph geometry})$, and in
+  particular deriving the threshold $\Sigma_c(n_3) = 3$ from the Born--Infeld
+  admissibility structure.
+  This is the subject of O23.
+  The second is the empirical confirmation of Corollary~\ref{cor:alignment} via an
+  extended numerical campaign at larger primes, which will quantify the rate of
+  convergence of $\mathrm{dist}(\nobs, \mathcal{N}_q)$ to zero and serve as
+  the primary falsifiability test of the present result.
+
+  Within the spectral admissibility sub-programme, the present paper closes the
+  first of the two open problems stated in O21: the shell-alignment conjecture is
+  now a theorem.
+  The programme enters its foundational phase, in which the remaining open problem
+  --- deriving the selected shell depth from first principles --- is sharply
+  delimited and well-posed.
+
+  \begin{thebibliography}{99}
+    \input{cosmochrony-bibliography}
+  \end{thebibliography}
+
+\end{document}
