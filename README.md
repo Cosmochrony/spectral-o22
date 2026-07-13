@@ -1,6 +1,6 @@
 This repository contains the source of the **O22 Cosmochrony paper**  
-[*Shell-Alignment from Projection Locking: A Discrete Admissibility Theorem under Born–Infeld
-Saturation*](out/SpectralO22.pdf).
+*Shell-Alignment from Projection Locking: A Discrete Admissibility Theorem under Born–Infeld
+Saturation*.
 
 This work extends the **spectral admissibility sub-programme** by resolving
 the first central open problem left by **O21**:
@@ -75,7 +75,7 @@ inherited from the underlying $\chi$-relaxation dynamics.
 
 The Born–Infeld admissibility constraint
 
-$A_n \leq \frac{c_\chi}{\sqrt{\lambda_n}}$
+$A_n \leq \frac{c_{\mathrm{BI}}}{\sqrt{\lambda_n}}$
 
 therefore defines a saturation locus in continuous depth, with no intrinsic
 reason to land on an integer.
@@ -113,7 +113,7 @@ no longer a primitive principle.
 
 The derivation is fully internal to the framework:
 
-$c_\chi \;\to\; A_n^{\max} = \frac{c_\chi}{\sqrt{\lambda_n}} \;\to\; L_{\mathrm{BI}} \;\to\; L_{\mathrm{BI}} \cap \mathbb{N}_q \;\to\; n_{\mathrm{sat}} \in \mathbb{N}$
+$c_{\mathrm{BI}} \;\to\; A_n^{\max} = \frac{c_{\mathrm{BI}}}{\sqrt{\lambda_n}} \;\to\; L_{\mathrm{BI}} \;\to\; L_{\mathrm{BI}} \cap \mathbb{N}_q \;\to\; n_{\mathrm{sat}} \in \mathbb{N}$
 
 No external parameter is introduced.
 
