@@ -5,6 +5,7 @@
 \usepackage{geometry}
 \usepackage{doi}
 \geometry{margin=2.5cm}
+\setlength{\emergencystretch}{2em}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -29,7 +30,7 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
 \medskip
 \large O22 --- Spectral Admissibility Sub-programme}
 \author{J.~Beau\\Independent Researcher}
-\date{2026}
+\date{2026\\[2pt]\small Version 1.16.1}
 
 \begin{document}
 
@@ -99,8 +100,11 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
     of $\Heis$.
     The capacity exponent $\dpair \approx 7.44$, extracted from the power-law decay
     $\sigpair(n) \sim C n^{-\dpair}$, lies within the phenomenological window $[7.4, 10.6]$, and
-    the structural relation $\bstar = 1/(\dpair + 1/2)$ recovers the cascade exponent
-    $\bstar \approx 0.126$ consistent with the observed charged-lepton mass ratios.
+    inserting this value into the historical prescription
+    $\bstar = 1/(\dpair + 1/2)$ gives $\bstar \approx 0.126$.
+    This numerical agreement is phenomenological: the prescription imports an LPS growth
+    equation into the fixed-degree Heisenberg cascade and is not derived by shell
+    alignment~\cite{Beau2026sgn}.
 
     O21~\cite{Beau2026a25} constructed a fully observable and intrinsic saturation
     rank $\nobs(n_0, n_1, q)$, invariant under all pipeline normalisations, and stated the

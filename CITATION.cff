@@ -7,7 +7,7 @@ authors:
     given-names: "Jérôme"
 repository-code: "https://github.com/Cosmochrony/spectral-o22"
 url: "https://cosmochrony.org/science/spectral/program/o22/"
-version: "1.16"
+version: "1.16.1"
 doi: "10.5281/zenodo.19367375"
 license: "CC-BY-4.0"
 preferred-citation:

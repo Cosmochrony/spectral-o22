@@ -26,9 +26,9 @@ However:
 - shell-alignment remained a conjecture
 - the geometric matching between continuous decay and discrete BFS structure
   was not yet derived
-- the transfer
-  $\delta_{\mathrm{pair}} \to \beta^*$
-  therefore still depended on an open structural hypothesis
+
+The paper resolves that shell-selection problem. It does not derive the separate
+LPS-to-Heisenberg capacity-to-rate prescription.
 
 This defines the scope of **O22**.
 
@@ -263,13 +263,11 @@ exact alignment emerges asymptotically.
 
 Test whether projection locking extends beyond Heisenberg Cayley graphs.
 
-### Full transfer closure
+### Native growth carrier
 
-Complete the unconditional derivation of
-
-$\delta_{\mathrm{pair}} \to \beta^*$
-
-once shell selection itself is derived.
+Any future rate relation must be derived on the Heisenberg substrate itself. Shell
+selection alone cannot repair the refuted cross-substrate prescription
+$\beta^*=1/(\delta_{\mathrm{pair}}+1/2)$.
 
 ## Status
 
