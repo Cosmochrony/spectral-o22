@@ -170,7 +170,8 @@ More precisely, the paper:
 - determine which shell is selected
 - derive
   $\Sigma_c(n_3) = 3$
-  from the substrate
+  from the substrate (still open: O23 proves the threefold adjoint dimension of a supplied spinor
+  carrier, so the threshold remains a supplied selection rule)
 - establish large-$q$ asymptotics of the locking mechanism
 - extend the theorem beyond Heisenberg graphs
 
