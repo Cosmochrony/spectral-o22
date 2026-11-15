@@ -30,7 +30,7 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
 \medskip
 \large O22 --- Spectral Admissibility Sub-programme}
 \author{J.~Beau\\Independent Researcher}
-\date{2026\\[2pt]\small Version 1.16.1}
+\date{2026\\[2pt]\small Version 1.17}
 
 \begin{document}
 
@@ -70,10 +70,10 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
     As a corollary, the logarithmic commensurability condition of O21 is recovered
     as the observable signature of projection locking, not as an independent resonance
     principle.
-    The entire derivation is foundational: the chain
+    Conditional on the supplied saturation scale, the chain
     $\cchi \to A_n^{\max} \to \mathcal{L}_{\mathrm{BI}} \cap \mathcal{N}_q \to
     \nsat \in \mathbb{N}$
-    introduces no parameter external to the Cosmochrony substrate.
+    introduces no further parameter; it does not determine $\cchi$.
     The problem of determining \emph{which} shell is selected --- equivalent to deriving
     $\Sigma_c(n_3) = 3$ --- remains open and is the subject of~O23.
   \end{abstract}
@@ -493,10 +493,11 @@ spectral eigenvalue along the BFS trajectory.
 
     \begin{remark}[Role of $\cchi$]
       \label{rem:c_chi}
-      The saturation scale $\cchi$ is not a free parameter in the Cosmochrony framework:
-      under the capacity axiom [A-cap] it is set by the maximal transport capacity and
-      connectivity density of the underlying relational substrate~\cite{Cosmochrony,Beau2026c}.
-      The foundational chain is therefore
+      The saturation scale $\cchi$ is a supplied parameter of the present admissibility model.
+      The capacity axiom [A-cap] posits a discrete per-node relaxation-rate bound, but fixes
+      neither its numerical value nor its identification with the spectral amplitude scale
+      used here~\cite{Beau2026c}.
+      With $\cchi$ supplied, the chain is
       \begin{equation}
         \label{eq:chain_cchi}
         \cchi
@@ -509,7 +510,7 @@ spectral eigenvalue along the BFS trajectory.
         \;\longrightarrow\;
         \nsat \in \mathbb{N},
       \end{equation}
-      and no parameter external to the Cosmochrony substrate is introduced at any step.
+      and no further parameter is introduced once the saturation scale is supplied.
     \end{remark}
 
   \section{Shell-Alignment as a Corollary}
@@ -639,11 +640,11 @@ spectral eigenvalue along the BFS trajectory.
   a continuous decay rate and a discrete shell structure is the projection of a single
   mechanism onto two different descriptive levels.
 
-  The locking mechanism is entirely foundational in the sense of
+  The locking mechanism is conditional on the supplied saturation scale, as stated in
   Remark~\ref{rem:c_chi}: the chain
   $\cchi \to \mathcal{L}_{\mathrm{BI}} \to \mathcal{L}_{\mathrm{BI}} \cap \mathcal{N}_q
   \to \nsat \in \mathbb{N}$
-  introduces no parameter external to the Cosmochrony substrate.
+  introduces no further parameter; it does not determine $\cchi$.
 
   Two problems remain open after this paper.
   The first is the determination of \emph{which} shell is selected: identifying

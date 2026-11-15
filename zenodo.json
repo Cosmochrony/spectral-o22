@@ -3,5 +3,6 @@
   "web_url": "https://cosmochrony.org/science/spectral/program/o22/",
   "main_tex": "tex/SpectralO22.tex",
   "zenodo_id": 19367375,
-  "doi": "10.5281/zenodo.19367375"
+  "doi": "10.5281/zenodo.19367375",
+  "notes": "Version 1.17. Treats the saturation scale as a supplied parameter; A-cap fixes neither its value nor its identification with the spectral amplitude scale. The projection-locking argument is unchanged."
 }

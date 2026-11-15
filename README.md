@@ -111,11 +111,12 @@ no longer a primitive principle.
 
 ### 5. Foundational chain from the substrate
 
-The derivation is fully internal to the framework:
+Conditional on the supplied saturation scale, the chain is:
 
 $c_{\mathrm{BI}} \;\to\; A_n^{\max} = \frac{c_{\mathrm{BI}}}{\sqrt{\lambda_n}} \;\to\; L_{\mathrm{BI}} \;\to\; L_{\mathrm{BI}} \cap \mathbb{N}_q \;\to\; n_{\mathrm{sat}} \in \mathbb{N}$
 
-No external parameter is introduced.
+The saturation scale is supplied, not numerically fixed by [A-cap].
+The subsequent chain introduces no further parameter.
 
 ### 6. Separation from the next open problem
 
@@ -321,3 +322,7 @@ are welcome.
 
 Please open an issue to discuss conceptual points, technical details, or
 possible extensions.
+
+## BI-1 correction candidate
+
+Version 1.17, pending independent review and publication. Treats the saturation scale as a supplied parameter; A-cap fixes neither its value nor its identification with the spectral amplitude scale. The projection-locking argument is unchanged.
