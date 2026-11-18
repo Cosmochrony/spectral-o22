@@ -4,5 +4,5 @@
   "main_tex": "tex/SpectralO22.tex",
   "zenodo_id": 19367375,
   "doi": "10.5281/zenodo.19367375",
-  "notes": "Version 1.17. Treats the saturation scale as a supplied parameter; A-cap fixes neither its value nor its identification with the spectral amplitude scale. The projection-locking argument is unchanged."
+  "notes": "Version 1.18 (alpha-2). Identifies the interval [7.4, 10.6] compared with the pair exponent as a historical comparison range, not a physical or derived window; the reciprocal evaluation remains the historical phenomenological prescription, not a derived result. The projection-locking argument, the rank claims and the supplied-saturation-scale conditionality are unchanged."
 }
