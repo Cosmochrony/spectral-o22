@@ -3,7 +3,7 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{hyperref}
 \hypersetup{
-  pdftitle={Shell-Alignment from Projection Locking: A Discrete Admissibility Theorem under Born--Infeld Saturation},
+  pdftitle={Projection Locking of the Saturation Depth: A Discrete Admissibility Theorem under Born--Infeld Saturation},
   pdfauthor={Jerome Beau}
 }
 \usepackage{geometry}
@@ -29,7 +29,7 @@
 \newcommand{\Cay}{\mathrm{Cay}(G_q, S_q)}
 \newcommand{\Heis}{\mathrm{Heis}_3(\mathbb{Z}/q\mathbb{Z})}
 
-\title{Shell-Alignment from Projection Locking:\\
+\title{Projection Locking of the Saturation Depth:\\
 A Discrete Admissibility Theorem under Born--Infeld Saturation\\
 \medskip
 \large O22 --- Spectral Admissibility Sub-programme}
@@ -51,8 +51,9 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
     rank $\nobs$ to align with a BFS shell of this graph --- a condition left open
     as an independent geometric hypothesis.
 
-    We prove that this conjecture is not independent: it is a theorem.
-    The proof identifies a \emph{projection locking} mechanism intrinsic to the
+    We prove a statement about the Born--Infeld saturation depth $\nsat$, not that
+    conjecture.
+    It rests on a \emph{projection locking} mechanism attributed to the
     non-injective projection $\Pi$ of the Cosmochrony framework.
     The argument rests on a distinction between two types of discreteness.
     The shell index $n$ is discrete as a matter of graph geometry.
@@ -63,25 +64,28 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
     Nothing in the Born--Infeld dynamics alone forces saturation to occur at an integer
     depth.
 
-    Shell-alignment follows from a third ingredient: the observable space of $\Pi$
-    decomposes as $\mathcal{O} = \bigsqcup_{n \in \mathcal{N}_q} \mathcal{O}_n$,
+    Saturation-depth locking follows from a third ingredient: the observable space of $\Pi$
+    is taken to decompose as $\mathcal{O} = \bigsqcup_{n \in \mathcal{N}_q} \mathcal{O}_n$,
     indexed by BFS shells, so that $\Pi$ cannot encode a saturation event at a
     non-admissible depth.
     The physically realisable saturation depth is therefore the first element of
     $\mathcal{L}_{\mathrm{BI}} \cap \mathcal{N}_q$, which lies in $\mathbb{N}$ by
     construction.
-    At its core, the proof reduces to the incompatibility between a continuous saturation
-    locus and a discrete admissibility support: the discreteness of $\nsat$ is not assumed
-    but derived as a constraint on admissible realisations under~$\Pi$.
-    As a corollary, the logarithmic commensurability condition of O21 is recovered
-    as the observable signature of projection locking, not as an independent resonance
-    principle.
+    The integer value of $\nsat$ thus follows from the definition of physical realisability,
+    which requires a saturation event to be encoded on a BFS shell, together with this
+    shell decomposition.
+    Version~1.19 withdraws the former Corollary~5.1, which recovered the O21 conjecture:
+    its proof identified $\nobs$ with $\nsat$ by citing an O21 proposition that does not
+    state this identification, and $\nobs$ depends on the normalisation of the observable.
+    The alignment of $\nobs$ with a BFS shell, and the logarithmic commensurability
+    condition of O21, remain open.
     Conditional on the supplied saturation scale, the chain
     $\cchi \to A_n^{\max} \to \mathcal{L}_{\mathrm{BI}} \cap \mathcal{N}_q \to
     \nsat \in \mathbb{N}$
     introduces no further parameter; it does not determine $\cchi$.
-    The problem of determining \emph{which} shell is selected --- equivalent to deriving
-    $\Sigma_c(n_3) = 3$ --- remains open and is the subject of~O23.
+    The problem of determining \emph{which} shell is selected remains open; relating it
+    to the threshold $\Sigma_c(n_3) = 3$ of O21 would require the withdrawn
+    identification.
   \end{abstract}
 
   \paragraph{Keywords.}
@@ -126,7 +130,8 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
     \end{quote}
     Two problems were identified as open: establishing this conjecture, and deriving the
     threshold $\Sigma_c(n_3) = 3$ from the Born--Infeld admissibility structure.
-    The present paper addresses the first problem.
+    The present paper proves a related statement about the Born--Infeld saturation depth.
+    Version~1.19 withdraws its former claim to establish the conjecture, which remains open.
 
   \subsection{Main result}
     \label{subsec:main_result}
@@ -137,9 +142,11 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
     The proof is an intersection argument: the Born--Infeld saturation locus
     $\mathcal{L}_{\mathrm{BI}} \subset \mathbb{R}_{>0}$ is a priori real-valued, but physical
     realisability under $\Pi$ constrains it to $\mathcal{N}_q$.
-    Shell-alignment is therefore not a hypothesis about the spectral dynamics of $\rho_c$
-    but a theorem about the interaction between the continuous Born--Infeld constraint and
-    the discrete admissibility filter of~$\Pi$.
+    Within this model, saturation-depth locking is therefore not a hypothesis about the spectral
+    dynamics of $\rho_c$ but a consequence of the interaction between the continuous
+    Born--Infeld constraint and the discrete admissibility filter of~$\Pi$, as encoded in the
+    definition of physical realisability.
+    It is a statement about $\nsat$; it does not place the O21 rank $\nobs$ on a shell.
 
     It is important to note that this result is not trivial.
     The observable $\sigpair(n)$ is evaluated along a discrete sequence of shell depths
@@ -159,8 +166,8 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
     Section~\ref{sec:two_discretenesses} establishes the key distinction between the discrete
     shell index and the continuous effective decay law of~$\sigpair$.
     Section~\ref{sec:locking} states and proves the Projection Locking theorem.
-    Section~\ref{sec:corollary_alignment} recovers the shell-alignment conjecture as a corollary
-    and identifies the logarithmic commensurability of O21 as its observable signature.
+    Section~\ref{sec:corollary_alignment} records the withdrawal of the former corollary that
+    recovered the shell-alignment conjecture of O21, which remains open.
     Section~\ref{sec:open} discusses open directions, in particular the problem of shell selection
     (O23) and the large-$q$ numerical programme.
 
@@ -240,8 +247,9 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
     Lemma~\ref{lem:continuous_decay}.
     Even though $\nobs$ is computed from measurements at integer depths, it is in general
     a real number, and there is no reason internal to its definition for it to be an integer.
-    Shell-alignment asserts that $\nobs \in \mathcal{N}_q$; this is the content of
-    Corollary~\ref{cor:alignment}.
+    The O21 shell-alignment conjecture asserts that $\nobs$ lies close to $\mathcal{N}_q$.
+    The former Corollary~\ref{cor:alignment}, which claimed to derive it, is withdrawn;
+    the conjecture remains open.
 
   \section{Two Types of Discreteness}
   \label{sec:two_discretenesses}
@@ -266,15 +274,15 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
     consecutive shell depths, and its parameters $(C, \dpair)$ are determined by the continuous
     spectral structure of the representation, not by the discrete shell boundaries.
 
-    \begin{remark}[Non-triviality of shell-alignment]
+    \begin{remark}[Non-triviality of saturation-depth locking]
       \label{rem:non_trivial}
-      The fact that $n$ is geometrically discrete does not make shell-alignment trivial.
+      The fact that $n$ is geometrically discrete does not make saturation-depth locking trivial.
       The Born--Infeld saturation condition $A_n \approx \Amax$ is a condition on a continuously
       varying amplitude.
       Nothing in the decay law of $\sigpair$ forces this condition to be satisfied exactly at an
       integer depth rather than strictly between two consecutive shells.
-      Shell-alignment asserts that the continuous saturation condition and the discrete shell geometry
-      are commensurate at the saturation point.
+      Saturation-depth locking asserts that the continuous saturation condition and the discrete shell
+      geometry are commensurate at the saturation point; it concerns $\nsat$, not the O21 rank $\nobs$.
       This commensurability requires an explanation; providing it is the content of
       Theorem~\ref{thm:locking}.
     \end{remark}
@@ -525,55 +533,56 @@ spectral eigenvalue along the BFS trajectory.
       and no further parameter is introduced once the saturation scale is supplied.
     \end{remark}
 
-  \section{Shell-Alignment as a Corollary}
+  \section{The Withdrawn Shell-Alignment Corollary}
   \label{sec:corollary_alignment}
 
-  \begin{corollary}[Shell-alignment conjecture resolved]
+  \begin{remark}[Former shell-alignment corollary withdrawn]
     \label{cor:alignment}
-    Under the hypotheses of Theorem~\ref{thm:locking}, the observable saturation
-    rank $\nobs(n_0, n_1, q)$ of O21 Definition~3.1~\cite{Beau2026a25} satisfies
+    Versions up to~1.18 stated, as Corollary~5.1, that under the hypotheses of
+    Theorem~\ref{thm:locking} the observable saturation rank $\nobs(n_0, n_1, q)$ of O21
+    Definition~3.1~\cite{Beau2026a25} satisfies
     \begin{equation}
       \label{eq:alignment}
-      \mathrm{dist}\!\left(\nobs,\, \{n \mid S_n \neq \emptyset\}\right) \ll 1,
+      \mathrm{dist}\!\left(\nobs,\, \{n \mid S_n \neq \emptyset\}\right) \ll 1 .
     \end{equation}
-    i.e.\ shell-alignment holds as a consequence of projection locking.
-  \end{corollary}
-
-  \begin{proof}
-    By Theorem~\ref{thm:locking}, $\nsat \in \mathcal{N}_q$.
-    By O21 Proposition~3.2~\cite{Beau2026a25}, $\nobs = \nsat$ whenever $\sigpair$
-    follows an exact power law on the pre-saturation window $(n_0, n_1)$.
-    In this regime the distance to the nearest BFS shell is therefore zero:
-    $\mathrm{dist}(\nobs, \mathcal{N}_q) = 0$.
-  \end{proof}
-
-  \begin{remark}[Finite-size effects and the residual at $q = 61$]
-    \label{rem:finite_size}
-    The numerical value $\mathrm{dist}(\nobs, \mathbb{Z}) \approx 0.20$ observed at
-    $q = 61$~\cite{Beau2026a25} is consistent with the exact-power-law hypothesis
-    of O21 Proposition~3.2 being satisfied only approximately at small primes.
-    Two sources of finite-size deviation are expected: the pre-saturation window
-    $(n_0, n_1)$ is short (of order $O(\log q)$ BFS steps, as established in
-    O8~\cite{Beau2026a12}), and the discrete shell spacing is coarse relative
-    to the continuous saturation locus $\mathcal{L}_{\mathrm{BI}}$.
-    Both effects are expected to decrease as $q \to \infty$.
-    The systematic verification of this convergence is part of the large-$q$
-    numerical programme described in Section~\ref{subsec:numerical};
-    it constitutes the primary empirical test of Corollary~\ref{cor:alignment}.
+    This corollary and its proof are withdrawn.
+    The proof combined Theorem~\ref{thm:locking}, which concerns the Born--Infeld saturation
+    depth $\nsat$, with the statement that $\nobs = \nsat$ under an exact power law on the
+    pre-saturation window, attributed to O21 Proposition~3.2.
+    That proposition proves only that $\nobs$ does not depend on the choice of $(n_0, n_1)$
+    within an exact power-law regime; it does not relate $\nobs$ to $\nsat$.
+    Neither O21 nor the present paper relates the threshold $9/q^2$ that defines $\nobs$ to
+    the value of the observable at the Born--Infeld saturation depth.
+    Moreover, $\nobs$ depends on the normalisation of the observable
+    (O21 Remark~3.3), so an identification with $\nsat$ would require a separately
+    established hypothesis fixing that normalisation relative to the Born--Infeld saturation
+    condition.
+    The alignment of $\nobs$ with a BFS shell therefore remains the open conjecture of O21
+    (Conjecture~4.1).
+    Theorem~\ref{thm:locking} is unaffected and concerns $\nsat$ only.
   \end{remark}
 
-  \begin{remark}[Logarithmic commensurability recovered]
+  \begin{remark}[The residual at $q = 61$]
+    \label{rem:finite_size}
+    The numerical value $\mathrm{dist}(\nobs, \mathbb{Z}) \approx 0.20$ observed at
+    $q = 61$~\cite{Beau2026a25} bears on the open O21 conjecture, not on
+    Theorem~\ref{thm:locking}.
+    It cannot be read as a finite-size deviation from a derived alignment, since no alignment
+    of $\nobs$ is derived here.
+    Whether such distances concentrate near zero as $q$ and the number of pairs grow is the
+    test of that conjecture described in O21 and in Section~\ref{subsec:numerical}.
+  \end{remark}
+
+  \begin{remark}[Logarithmic commensurability not recovered]
     \label{rem:log_commensurability}
-    O21 Remark~4.2~\cite{Beau2026a25} observed that shell-alignment is equivalent to a
+    O21 Remark~4.2~\cite{Beau2026a25} observed that shell-alignment of $\nobs$ is equivalent to a
     logarithmic commensurability condition: the local decay rate $\dpair$ and the amplitude
     ratio $A = q^2 \sigma(n_0)/9$ must be commensurate with the integer shell structure.
-    Corollary~\ref{cor:alignment} shows that this commensurability is not an independent
-    resonance condition imposed from outside, but the \emph{observable signature} of
-    projection locking: the continuous decay law and the discrete shell geometry are commensurate
-    at the saturation point \emph{because} the locking mechanism forces the saturation event
-    onto a shell.
-    The terminology ``resonance'' in O21 is therefore a description at the level of the
-    observable; the present paper provides the underlying mechanism.
+    Versions up to~1.18 presented this condition as the observable signature of projection
+    locking.
+    With Corollary~\ref{cor:alignment} withdrawn, that reading is not established:
+    Theorem~\ref{thm:locking} places $\nsat$ on a shell, but no result transfers this to $\nobs$.
+    The commensurability condition remains the open content of the O21 conjecture.
   \end{remark}
 
   \section{Open Directions}
@@ -586,11 +595,12 @@ spectral eigenvalue along the BFS trajectory.
     occurs \emph{on} a BFS shell.
     It does not determine \emph{which} shell.
     Determining the selected shell requires identifying the depth $\nsat$ as a function of
-    $(\cchi, \lambda_n, \text{graph geometry})$, and in particular explaining why
-    $\Sigma_c(n_3) = 3$ --- the threshold underlying the definition of $\nobs$ in O21.
-    This is the subject of O23: once the locking mechanism is established, the question
-    ``why a shell?'' is resolved and the question ``why \emph{this} shell?'' becomes
-    well-posed.
+    $(\cchi, \lambda_n, \text{graph geometry})$.
+    Within the stated model, the question ``why a shell?'' is answered for $\nsat$, and the
+    question ``why \emph{this} shell?'' becomes well-posed.
+    Relating that shell to the threshold $\Sigma_c(n_3) = 3$ underlying the definition of
+    $\nobs$ in O21 would require the withdrawn identification of $\nobs$ with $\nsat$
+    (Remark~\ref{cor:alignment}).
     In O21 the number 3 enters through the selection rule $\Sigma_c(n_3) = 3$, which O24
     records as a supplied selection rule~\cite{Beau2026a28}.
     Its reading as a number of physically stable directions selected by $\Pi$ in the Weil
@@ -601,14 +611,11 @@ spectral eigenvalue along the BFS trajectory.
   \subsection{Large-$q$ numerical programme}
     \label{subsec:numerical}
 
-    The numerical evidence for shell-alignment currently rests on a single pair $(c, q-c) = (1, 60)$
-    at $q = 61$, with $\mathrm{dist}(\nobs, \mathbb{Z}) \approx 0.20$.
-    This intermediate value neither confirms exact alignment nor refutes it: it is consistent
-    with a finite-size deviation from the exact locking point, expected to decrease as $q \to \infty$.
+    The numerical evidence for the O21 shell-alignment conjecture currently rests on a single pair
+    $(c, q-c) = (1, 60)$ at $q = 61$, with $\mathrm{dist}(\nobs, \mathbb{Z}) \approx 0.20$.
+    This intermediate value neither confirms alignment nor refutes it.
     An extended numerical campaign at larger primes and across multiple conjugate pairs is required
-    to provide empirical confirmation of Corollary~\ref{cor:alignment} and to constrain the rate of
-    convergence.
-    This programme is a prerequisite for the full quantitative validation of O23.
+    to test that conjecture; it would not test Theorem~\ref{thm:locking}, which concerns $\nsat$.
 
   \subsection{Generalisation beyond $\Heis$}
     \label{subsec:generalisation}
@@ -622,10 +629,11 @@ spectral eigenvalue along the BFS trajectory.
   \section{Conclusion}
   \label{sec:conclusion}
 
-  This paper establishes that the shell-alignment conjecture of
-  O21~\cite{Beau2026a25} is not an independent geometric condition but a
-  structural consequence of projection locking under Born--Infeld spectral
-  admissibility.
+  This paper establishes, within its stated model, that a physically realisable
+  Born--Infeld saturation depth lies on a BFS shell: $\nsat \in \mathcal{N}_q$.
+  It does not establish the shell-alignment conjecture of O21~\cite{Beau2026a25},
+  which concerns the observable rank $\nobs$; the former corollary claiming it is
+  withdrawn (Remark~\ref{cor:alignment}).
 
   The argument proceeds in three steps.
   First, we distinguish two types of discreteness: the shell index $n \in \mathcal{N}_q$,
@@ -644,15 +652,12 @@ spectral eigenvalue along the BFS trajectory.
   support available) are simultaneously satisfied, which forces $\nsat \in \mathcal{N}_q$
   (Theorem~\ref{thm:locking}).
 
-  Shell-alignment is therefore not imposed by the spectral dynamics of the Weil
-  representation alone, nor by the geometry of $\Cay$ alone, but emerges as a
-  necessary consequence of their interaction through $\Pi$ under the Born--Infeld
-  constraint.
-  The ``resonance'' language of O21 Remark~4.2 is recovered as the observable
-  signature of this locking at the level of $\nobs$ (Corollary~\ref{cor:alignment},
-  Remark~\ref{rem:log_commensurability}): what appears as commensurability between
-  a continuous decay rate and a discrete shell structure is the projection of a single
-  mechanism onto two different descriptive levels.
+  Saturation-depth locking is therefore not imposed by the spectral dynamics of the Weil
+  representation alone, nor by the geometry of $\Cay$ alone; within the model it follows
+  from their interaction through $\Pi$, as encoded in condition (R2) and the shell
+  decomposition of the observable space.
+  The ``resonance'' language of O21 Remark~4.2 concerns $\nobs$ and is not recovered
+  here (Remark~\ref{rem:log_commensurability}).
 
   The locking mechanism is conditional on the supplied saturation scale, as stated in
   Remark~\ref{rem:c_chi}: the chain
@@ -660,23 +665,18 @@ spectral eigenvalue along the BFS trajectory.
   \to \nsat \in \mathbb{N}$
   introduces no further parameter; it does not determine $\cchi$.
 
-  Two problems remain open after this paper.
+  Three problems remain open after this paper.
   The first is the determination of \emph{which} shell is selected: identifying
-  $\nsat$ as a function of $(\cchi, \lambda_n, \text{graph geometry})$, and in
-  particular deriving the threshold $\Sigma_c(n_3) = 3$ from the Born--Infeld
-  admissibility structure.
-  This is the subject of O23.
-  The second is the empirical confirmation of Corollary~\ref{cor:alignment} via an
-  extended numerical campaign at larger primes, which will quantify the rate of
-  convergence of $\mathrm{dist}(\nobs, \mathcal{N}_q)$ to zero and serve as
-  the primary falsifiability test of the present result.
+  $\nsat$ as a function of $(\cchi, \lambda_n, \text{graph geometry})$.
+  The second is the shell-alignment conjecture of O21 itself, together with any
+  relation between $\nobs$ and $\nsat$; a large-$q$ campaign over many conjugate pairs
+  would test that conjecture, not the present theorem.
+  The third is the threshold $\Sigma_c(n_3) = 3$, which remains a supplied selection
+  rule~\cite{Beau2026a28}.
 
-  Within the spectral admissibility sub-programme, the present paper closes the
-  first of the two open problems stated in O21: the shell-alignment conjecture is
-  now a theorem.
-  The programme enters its foundational phase, in which the remaining open problem
-  --- deriving the selected shell depth from first principles --- is sharply
-  delimited and well-posed.
+  Within the spectral admissibility sub-programme, the present paper therefore does not
+  close the first open problem stated in O21: the shell-alignment conjecture remains
+  open.
 
   \bibliographystyle{plain}
       \bibliography{cosmochrony-bibliography}

@@ -4,5 +4,5 @@
   "main_tex": "tex/SpectralO22.tex",
   "zenodo_id": 19367375,
   "doi": "10.5281/zenodo.19367375",
-  "notes": "Version 1.18 (alpha-2). Identifies the interval [7.4, 10.6] compared with the pair exponent as a historical comparison range, not a physical or derived window; the reciprocal evaluation remains the historical phenomenological prescription, not a derived result. The projection-locking argument, the rank claims and the supplied-saturation-scale conditionality are unchanged."
+  "notes": "Version 1.19. Retitled from 'Shell-Alignment from Projection Locking'. Withdraws Corollary 5.1, which identified the O21 rank with the Born-Infeld saturation depth by citing an O21 proposition that does not state this identification; the O21 shell-alignment conjecture remains open. Theorem 4.8 is unchanged and concerns the saturation depth only, under the paper's definition of physical realisability. The abstract no longer states that the pair observable governs the charged-lepton mass hierarchy, and the O21 rank is described as normalisation dependent. The threshold Sigma_c(n_3)=3 is a supplied selection rule (O24). Labels and numbering are kept."
 }
