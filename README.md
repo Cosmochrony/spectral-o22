@@ -75,7 +75,8 @@ the spectral amplitude scale.
 
 - **O16**: pair observable identified
 - **O17**: pair dynamics derived
-- **O18**: fibre structure derived
+- **O18**: Born–Infeld parity established as a covariance of the response family; the fibre identification
+  stated as an open problem
 - **O19**: canonical amplitude normalisation
 - **O20**: persistence criterion
 - **O21**: crossing rank free of fitted parameters, for a fixed normalisation
