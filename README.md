@@ -29,7 +29,7 @@ Theorem 4.8 (projection locking):
   $n_{\mathrm{sat}} \in \mathbb{N}$
 
 The integer value follows from that definition of realisability together with the shell decomposition.
-The existence of such a depth is not established. Conditional on the supplied saturation scale, the chain
+Theorem 4.8 does not establish that such a depth exists. Conditional on the supplied saturation scale, the chain
 
 $c_{\mathrm{BI}} \;\to\; A_n^{\max} = \frac{c_{\mathrm{BI}}}{\sqrt{\lambda_n}} \;\to\; L_{\mathrm{BI}} \;\to\; L_{\mathrm{BI}} \cap \mathbb{N}_q \;\to\; n_{\mathrm{sat}} \in \mathbb{N}$
 
