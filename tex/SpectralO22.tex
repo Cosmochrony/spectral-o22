@@ -34,7 +34,7 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
 \medskip
 \large O22 --- Spectral Admissibility Sub-programme}
 \author{J.~Beau\\Independent Researcher}
-\date{2026\\[2pt]\small Version 1.18}
+\date{2026\\[2pt]\small Version 1.19}
 
 \begin{document}
 
@@ -43,8 +43,10 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
   \begin{abstract}
     Within the spectral admissibility sub-programme of Cosmochrony, the canonical
     fibre-level observable $\sigpair(n)$ on the Cayley graph
-    $\mathrm{Cay}(\mathrm{Heis}_3(\mathbb{Z}/q\mathbb{Z}), S_q)$ governs the
-    charged-lepton mass hierarchy through a capacity decay exponent $\dpair$.
+    $\mathrm{Cay}(\mathrm{Heis}_3(\mathbb{Z}/q\mathbb{Z}), S_q)$ decays with a
+    capacity exponent $\dpair$.
+    Its comparison with the charged-lepton mass hierarchy is a historical research
+    motivation; no result of the programme establishes that link.
     O21 conjectured that physical admissibility requires the observable saturation
     rank $\nobs$ to align with a BFS shell of this graph --- a condition left open
     as an independent geometric hypothesis.
@@ -97,11 +99,12 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
   \subsection{The open problem after O21}
     \label{subsec:open_after_o21}
 
-    The spectral admissibility sub-programme of Cosmochrony~\cite{Cosmochrony} has established,
-    through O16--O21~\cite{Beau2026a20,Beau2026a21,Beau2026a22,Beau2026a23,Beau2026a24,Beau2026a25},
-    that the physically relevant observable for the charged-lepton mass hierarchy is the canonical
-    fibre-level pair observable $\sigpair(n)$, defined on conjugate Weil blocks $\{\rho_c, \rho_{q-c}\}$
-    of $\Heis$.
+    The spectral admissibility sub-programme of Cosmochrony~\cite{Cosmochrony} has introduced and
+    studied, through O16--O21~\cite{Beau2026a20,Beau2026a21,Beau2026a22,Beau2026a23,Beau2026a24,Beau2026a25},
+    the canonical fibre-level pair observable $\sigpair(n)$, defined on conjugate Weil blocks
+    $\{\rho_c, \rho_{q-c}\}$ of $\Heis$.
+    Its relation to the charged-lepton mass hierarchy is a research motivation, not a result of
+    those papers: none of them derives a link between this observable and physical masses.
     The capacity exponent $\dpair \approx 7.44$, extracted from the power-law decay
     $\sigpair(n) \sim C n^{-\dpair}$, lies within the historical comparison range $[7.4, 10.6]$, and
     inserting this value into the historical prescription
@@ -110,8 +113,10 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
     equation into the fixed-degree Heisenberg cascade and is not derived by shell
     alignment~\cite{Beau2026sgn}.
 
-    O21~\cite{Beau2026a25} constructed a fully observable and intrinsic saturation
-    rank $\nobs(n_0, n_1, q)$, invariant under all pipeline normalisations, and stated the
+    O21~\cite{Beau2026a25} constructed a fully observable saturation rank
+    $\nobs(n_0, n_1, q)$, free of fitted parameters and defined for the canonical normalisation
+    of the observable (under $\sigpair \mapsto \lambda\sigpair$ it scales as
+    $\lambda^{1/\delta}$), and stated the
     following conjecture:
     \begin{quote}
       \emph{Shell-Alignment Conjecture (O21 Conjecture~4.1).}
@@ -224,7 +229,10 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
     where $\delta(n_0, n_1) = -\log(\sigpair(n_1)/\sigpair(n_0))/\log(n_1/n_0)$ is the
     local exponent estimated from the two measurements.
     By O21 Proposition~3.2, $\nobs$ is independent of the choice of $(n_0, n_1)$ within
-    an exact power-law regime, and invariant under global rescaling of~$\sigpair$.
+    an exact power-law regime.
+    It is not invariant under a global rescaling $\sigpair \mapsto \lambda\sigpair$: by O21
+    Remark~3.3 it scales as $\lambda^{1/\delta(n_0,n_1)}$, so it is defined for the canonical
+    normalisation of O19.
 
     The key structural point is that $\nobs$ is derived from a \emph{continuous} decay
     law: the local exponent $\delta(n_0, n_1)$ and the amplitude ratio are both functions
@@ -583,10 +591,12 @@ spectral eigenvalue along the BFS trajectory.
     This is the subject of O23: once the locking mechanism is established, the question
     ``why a shell?'' is resolved and the question ``why \emph{this} shell?'' becomes
     well-posed.
-    The number 3 is interpreted in O21 as the number of physically stable directions
-    selected by $\Pi$ in the Weil realisation of $\Heis$; O23 will determine whether this
-    is a derived consequence of the Born--Infeld structure or an independent arithmetic
-    property of the Weil representation.
+    In O21 the number 3 enters through the selection rule $\Sigma_c(n_3) = 3$, which O24
+    records as a supplied selection rule~\cite{Beau2026a28}.
+    Its reading as a number of physically stable directions selected by $\Pi$ in the Weil
+    realisation of $\Heis$ is an interpretive hypothesis, not a result.
+    Whether the rule is a derived consequence of the Born--Infeld structure or an independent
+    arithmetic property of the Weil representation remains open.
 
   \subsection{Large-$q$ numerical programme}
     \label{subsec:numerical}
