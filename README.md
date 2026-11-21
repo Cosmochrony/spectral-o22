@@ -2,6 +2,12 @@ This repository contains the source of the **O22 Cosmochrony paper**
 *Projection Locking of the Saturation Depth: A Discrete Admissibility Theorem under Born–Infeld
 Saturation* (titled *Shell-Alignment from Projection Locking* up to version 1.18).
 
+**Version 1.20.** Follows O19 1.3: §2.2 describes the O19 canonical observable as a case-dependent
+proposal whose independence tests are open, no longer as a pipeline-independent combination
+(O19's former Proposition 7.2 is now Open Problem 7.2); the reported values $r(c,q)\in\{1,2,3,4\}$
+are a historical hypothesis, $r\equiv1$ on the real pipeline within O16's contract, and O17's
+normalisation statement is internal to its toy model. Theorem 4.8 is unchanged.
+
 **Version 1.19.** Withdraws the former Corollary 5.1, which recovered the shell-alignment conjecture of
 **O21**. Its proof identified the O21 rank $n^{\mathrm{obs}}_3$ with the Born–Infeld saturation depth
 $n_{\mathrm{sat}}$ by citing O21 Proposition 3.2, which only shows that $n^{\mathrm{obs}}_3$ does not
@@ -51,7 +57,7 @@ the spectral amplitude scale.
 
 ### Inputs
 
-- canonical fibre-level observable from **O19** and the crossing rank of **O21**
+- canonical fibre-level observable proposed in **O19** (open tests) and the crossing rank of **O21**
 - pair-level observable class from **O16** to **O18**
 - non-injective projection $\Pi$ and the shell decomposition of its observable space
 - Born–Infeld amplitude bound with a supplied saturation scale
@@ -77,7 +83,7 @@ the spectral amplitude scale.
 - **O17**: pair dynamics derived
 - **O18**: Born–Infeld parity established as a covariance of the response family; the fibre identification
   stated as an open problem
-- **O19**: canonical amplitude normalisation
+- **O19**: canonical amplitude normalisation proposed, with open tests
 - **O20**: persistence criterion
 - **O21**: crossing rank free of fitted parameters, for a fixed normalisation
 - **O22**: projection locking of the saturation depth

@@ -34,7 +34,7 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
 \medskip
 \large O22 --- Spectral Admissibility Sub-programme}
 \author{J.~Beau\\Independent Researcher}
-\date{2026\\[2pt]\small Version 1.19}
+\date{2026\\[2pt]\small Version 1.20}
 
 \begin{document}
 
@@ -201,18 +201,22 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
   \subsection{The canonical fibre-level observable}
     \label{subsec:canonical_observable}
 
-    The canonical pair observable $\sigpair(n)$ was introduced in O19~\cite{Beau2026a23}
-    as the pipeline-independent combination of the Gram--Schmidt spans of conjugate
-    Weil blocks $\rho_c$ and $\rho_{q-c}$ on $\Heis$.
-    It is defined at the fibre level by eliminating the residual amplitude factor
-    $r(c,q) \in \{1,2,3,4\}$, which is a normalisation artefact of the O12/O13
-    pipeline~\cite{Beau2026a16,Beau2026a17} rather than an arithmetic invariant of
-    the Weil representation.
-    By construction, $\sigpair(n)$ is:
+    The canonical pair observable $\sigpair(n)$ was proposed in O19~\cite{Beau2026a23}
+    as a case-dependent canonical normalisation of the combination of the Gram--Schmidt spans
+    of conjugate Weil blocks $\rho_c$ and $\rho_{q-c}$ on $\Heis$; the independence tests
+    that would fix the case are open.
+    It is intended to eliminate a residual amplitude factor $r(c,q)$ of the O12/O13
+    pipeline~\cite{Beau2026a16,Beau2026a17}.
+    The reported values $r(c,q) \in \{1,2,3,4\}$ are a historical hypothesis; on the real
+    O12/O13 pipeline the conjugate-block identity of O16~\cite{Beau2026a20} forces
+    $r(c,q) \equiv 1$ within O16's contract, and O17 shows only within its toy model that any
+    variation of $r$ would reside in the normalisation.
+    The observable $\sigpair(n)$ is:
     \begin{itemize}
       \item invariant under conjugation $c \leftrightarrow q-c$, reflecting the identity
       $\rho_{q-c} = \overline{\rho_c}$ established in O17~\cite{Beau2026a21};
-      \item independent of Gram--Schmidt seed and basis choices (O19 Proposition~7.2);
+      \item independent of Gram--Schmidt seed and basis choices only if O19 Open
+      Problem~7.2 (stated as Proposition~7.2 up to O19 version~1.2) is resolved positively;
       \item evaluated at discrete shell depths $n \in \mathcal{N}_q$, while inheriting a
       continuous effective decay law from the underlying Weil representation
       dynamics (Section~\ref{subsec:dynamical_continuity}).
@@ -239,7 +243,7 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
     an exact power-law regime.
     It is not invariant under a global rescaling $\sigpair \mapsto \lambda\sigpair$: by O21
     Remark~3.3 it scales as $\lambda^{1/\delta(n_0,n_1)}$, so it is defined for the canonical
-    normalisation of O19.
+    normalisation proposed in O19.
 
     The key structural point is that $\nobs$ is derived from a \emph{continuous} decay
     law: the local exponent $\delta(n_0, n_1)$ and the amplitude ratio are both functions
@@ -363,7 +367,7 @@ A Discrete Admissibility Theorem under Born--Infeld Saturation\\
       This rank is an integer-valued function of $n \in \mathcal{N}_q$, defined only at shell
       boundaries.
       The canonical observable $\sigpair(n)$ is constructed from this rank via the normalisation
-      of O19~\cite{Beau2026a23}, and is therefore defined only at $n \in \mathcal{N}_q$.
+      proposed in O19~\cite{Beau2026a23}, and is therefore defined only at $n \in \mathcal{N}_q$.
       No effective state of the form $\Pi(\chi) \in \mathcal{O}_{n'}$ exists for
       $n' \notin \mathcal{N}_q$, since the corresponding component $\mathcal{O}_{n'}$ is empty
       by Definition~\ref{def:admissible_depth}.
